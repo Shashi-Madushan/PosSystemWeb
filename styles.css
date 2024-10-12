@@ -1,0 +1,35 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+   
+    background-color: #f5f5f5;
+}
+.sidebar {
+    width: 15%;
+    background-color: #ffe6e6;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.sidebar a:hover {
+    background-color: #ddd;
+}
+.sidebar a i {
+    margin-right: 10px;
+}
+#dynamic_content{
+   width: 85%;
+   padding: 1rem;
+}

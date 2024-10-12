@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "Fish Food",
+      "description": "High-quality fish food",
+      "stock": 30,
+      "price": 5,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 2,
+      "name": "Aquarium Filter",
+      "description": "Powerful water filter",
+      "stock": 20,
+      "price": 50,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 3,
+      "name": "Water Pump",
+      "description": "Submersible water pump",
+      "stock": 15,
+      "price": 25,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 4,
+      "name": "Air Stone",
+      "description": "Produces bubbles in aquariums",
+      "stock": 50,
+      "price": 3,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 5,
+      "name": "Aquarium Heater",
+      "description": "Adjustable aquarium heater",
+      "stock": 10,
+      "price": 40,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 6,
+      "name": "Fish Net",
+      "description": "Fine mesh fish net",
+      "stock": 60,
+      "price": 8,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 7,
+      "name": "Gravel Cleaner",
+      "description": "Siphon gravel vacuum cleaner",
+      "stock": 25,
+      "price": 18,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 8,
+      "name": "Aquarium Light",
+      "description": "LED aquarium light",
+      "stock": 12,
+      "price": 65,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 9,
+      "name": "Water Conditioner",
+      "description": "Removes chlorine and chloramine",
+      "stock": 45,
+      "price": 12,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 10,
+      "name": "Aquarium Thermometer",
+      "description": "Digital aquarium thermometer",
+      "stock": 30,
+      "price": 10,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 11,
+      "name": "Fish Tank",
+      "description": "50-gallon glass aquarium tank",
+      "stock": 5,
+      "price": 200,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 12,
+      "name": "CO2 Diffuser",
+      "description": "CO2 diffuser for planted tanks",
+      "stock": 10,
+      "price": 30,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 13,
+      "name": "Algae Scraper",
+      "description": "Magnetic algae scraper",
+      "stock": 40,
+      "price": 15,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 14,
+      "name": "Fish Medicine",
+      "description": "Antibiotic treatment for fish",
+      "stock": 25,
+      "price": 20,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    },
+    {
+      "id": 15,
+      "name": "Aquarium Background",
+      "description": "Aquarium decoration background",
+      "stock": 8,
+      "price": 35,
+      "imgSrc": "https://via.placeholder.com/200x100"
+    }
+  ]
+  

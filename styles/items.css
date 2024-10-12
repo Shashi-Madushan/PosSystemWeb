@@ -1,0 +1,66 @@
+#itemsDynamicSection{
+    height: calc(90vh - 100px); /* Adjust this based on other elements' heights */
+    max-height: calc(90vh - 100px); /* Maximum height to avoid exceeding viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none
+   
+}
+
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-card {
+    width: 150px;
+    height: 190px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgb(179, 179, 179);
+}
+
+.item-card .delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.item-card img {
+    max-width: 100%;
+    max-height: 60px;
+    margin-bottom: 10px;
+}
+
+.item-card .item-qty {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-size: 12px;
+}
+
+.item-card .item-price {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+}

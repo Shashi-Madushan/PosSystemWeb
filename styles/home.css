@@ -1,0 +1,63 @@
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+tr:hover{
+    cursor: pointer;
+}
+.list-group-item {
+    cursor: pointer;
+}
+
+/* Right payments section styling */
+#paymentSection {
+    height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#orderItemsList {
+    max-height: 55vh; /* Adjust this to fit within the payment section */
+    overflow-y: auto; /* Allows the items to be scrollable */
+    margin-bottom: 20px; /* Add space between items list and totals */
+}
+
+#orderItemsList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#totalsSection {
+    padding: 10px 0;
+    font-weight: bold;
+}
+#dynamicSection {
+    height: calc(90vh - 100px); /* Adjust this based on other elements' heights */
+    max-height: calc(90vh - 100px); /* Maximum height to avoid exceeding viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none
+    
+}
+
+#dynamicSection .card {
+    margin-bottom: 15px; /* Spacing between cards */
+}

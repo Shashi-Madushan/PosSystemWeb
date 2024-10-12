@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Item Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/items.css">
+</head>
+<body>
+    <div class="container mt-5 ">
+        <div class="d-flex justify-content-center ">
+  
+            <input type="text" id="searchBar" class="form-control w-60" placeholder="Search...">
+        </div>
+
+        <div id="itemsDynamicSection" class="mt-3 d-flex flex-wrap"></div>
+
+        <button title="addbtn" id="addItemBtn" class="btn btn-dark add-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <!-- Edit Item Modal -->
+    <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editItemLabel">Edit Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editItemForm">
+                        <div class="form-group">
+                            <label for="itemName">Name</label>
+                            <input type="text" class="form-control" id="itemName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemDescription">Description</label>
+                            <textarea class="form-control" id="itemDescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemStock">Stock</label>
+                            <input type="number" class="form-control" id="itemStock" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemPrice">Price</label>
+                            <input type="number" class="form-control" id="itemPrice" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveItemBtn">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div class="modal fade" id="addItemModal" tabindex="-1" aria-labelledby="addItemLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addItemLabel">Add New Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addItemForm">
+                        <div class="form-group">
+                            <label for="newItemName">Name</label>
+                            <input type="text" class="form-control" id="newItemName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemDescription">Description</label>
+                            <textarea class="form-control" id="newItemDescription" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemStock">Stock</label>
+                            <input type="number" class="form-control" id="newItemStock" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newItemPrice">Price</label>
+                            <input type="number" class="form-control" id="newItemPrice" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="addNewItemBtn">Add Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="../scripts/items.js"></script>
+</body>
+</html>

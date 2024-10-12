@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "phone": "555-9876",
+      "address": "123 Maple Street, Springfield"
+    },
+    {
+      "id": 2,
+      "name": "Bob Brown",
+      "phone": "555-6543",
+      "address": "456 Oak Avenue, Lincoln"
+    },
+    {
+      "id": 3,
+      "name": "Charlie Davis",
+      "phone": "555-3210",
+      "address": "789 Pine Road, Riverdale"
+    },
+    {
+      "id": 4,
+      "name": "Dana Lee",
+      "phone": "555-2468",
+      "address": "101 Cedar Lane, Elmwood"
+    },
+    {
+      "id": 5,
+      "name": "Evan White",
+      "phone": "555-1357",
+      "address": "202 Birch Street, Willowbrook"
+    },
+    {
+      "id": 6,
+      "name": "Fiona Green",
+      "phone": "555-7539",
+      "address": "11 Chestnut Avenue, Maplewood"
+    },
+    {
+      "id": 7,
+      "name": "George Black",
+      "phone": "555-8524",
+      "address": "456 Spruce Street, Rivertown"
+    },
+    {
+      "id": 8,
+      "name": "Hannah Scott",
+      "phone": "555-9632",
+      "address": "789 Elm Drive, Cedarville"
+    },
+    {
+      "id": 9,
+      "name": "Ian Blue",
+      "phone": "555-1479",
+      "address": "321 Oak Court, Brookside"
+    },
+    {
+      "id": 10,
+      "name": "Julia Brown",
+      "phone": "555-3698",
+      "address": "101 Birch Blvd, Meadowlands"
+    }
+  ]
+  
