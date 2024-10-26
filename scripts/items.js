@@ -1,18 +1,5 @@
 (function () {
 
-
-    let items = null;
-    async function loadItems() {
-        try {
-            const res = await fetch('../jsones/items.json');
-            const data = await res.json();
-            items= data;
-            renderItems(items);
-        } catch (error) {
-            console.log('erron loading items (items)',error);
-        }
-    }
-
     let selectedItem = null;
 
     function renderItems(itemsToRender) {
@@ -99,7 +86,12 @@
         const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchValue));
         renderItems(filteredItems);
     });
-    loadItems();
+    
+    if (items) {
+        renderItems(items);
+    } else {
+        console.log("Items not loarded")
+    }
     
 })();
 

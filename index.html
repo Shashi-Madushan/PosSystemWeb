@@ -1,92 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>POS System</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <div class="sidebar">
-        <a href="#" data-file="pages/home.html" ><i class="fas fa-home"></i> Home</a>
-        <a href="#" data-file="pages/items.html" onload="renderItems(items)"><i class="fas fa-box"></i> Items</a>
+<body>
+    <div class="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+    <nav class="sidebar">
+        <a href="#" data-file="pages/home.html"><i class="fas fa-home"></i> Home</a>
+        <a href="#" data-file="pages/items.html" ><i class="fas fa-box"></i> Items</a>
         <a href="#" data-file="pages/customers.html"><i class="fas fa-users"></i> Customers</a>
         <a href="#" data-file="pages/reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
-    </div>
+    </nav>
     <div id="dynamic_content">
-        
-    </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll('div>a');
-            const dynamicContent = document.getElementById('dynamic_content');
-        
-            function loadContent(file) {
-                fetch(file)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Network response was not ok ${response.statusText}`);
-                        }
-                        return response.text();
-                    })
-                    .then(responseText => {
-                        // Clear the previous content
-                        dynamicContent.innerHTML = '';
-            
-                        // Parse the response text
-                        const tempContainer = document.createElement('div');
-                        tempContainer.innerHTML = responseText;
-                        dynamicContent.appendChild(tempContainer);
-            
-                        // Load external scripts
-                        const scripts = tempContainer.querySelectorAll('script[src]');
-                        scripts.forEach(script => {
-                            const existingScript = document.querySelector(`script[src="${script.src}"]`);
-                            if (existingScript) {
-                                existingScript.remove();
-                            }
-                            const newScript = document.createElement('script');
-                            newScript.src = `${script.src}?t=${new Date().getTime()}`;
-                            newScript.onload = () => console.log(`Script loaded: ${script.src}`);
-                            newScript.onerror = () => console.error(`Error loading script: ${script.src}`);
-                            document.body.appendChild(newScript);
-                        });
-            
-                        // Execute inline scripts
-                        const inlineScripts = tempContainer.querySelectorAll('script:not([src])');
-                        inlineScripts.forEach(script => {
-                            try {
-                                console.log('Executing inline script:', script.textContent);
-                                (function() {
-                                    eval(script.textContent);
-                                })();
-                            } catch (e) {
-                                console.error('Error executing inline script:', e);
-                            }
-                        });
-                    })
-                    .catch(error => {
-                        console.error('Error loading content:', error);
-                        dynamicContent.innerHTML = '<p>Error loading content. Please try again later.</p>';
-                    });
-            }
-        
-            links.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault(); // Prevent the default link behavior
-                    const file = this.getAttribute('data-file'); // Get the file name from data-file attribute
-                    loadContent(file);
-                });
-            });
-        
-            // Optionally, load the default content (e.g., home.html) from the subfolder
-            const defaultFile = links[0].getAttribute('data-file');
-            loadContent(defaultFile);
-        });
-    </script>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    
 </body>
+
 </html>

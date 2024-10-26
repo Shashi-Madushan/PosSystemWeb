@@ -1,17 +1,5 @@
+
 (function () {
-    let customers = null;
-    async function loadCustomers() {
-        try {
-            const res = await fetch('../jsones/customers.json');
-            const data = await res.json();
-            customers = data;
-            renderCustomers(customers);
-
-        } catch (error) {
-            console.log('error loading customers (customers)',error);
-        }
-
-    }
     let selectedCustomer = null;
 
     function renderCustomers(customersToRender) {
@@ -37,18 +25,18 @@
 
     function openEditCustomerModal(customer) {
         selectedCustomer = customer;
-        $('#customerName').val(customer.name);
-        $('#customerPhone').val(customer.phone);
-        $('#customerAddress').val(customer.address);
+        document.getElementById('customerName').value = customer.name;
+        document.getElementById('customerPhone').value = customer.phone;
+        document.getElementById('customerAddress').value = customer.address;
         $('#editCustomerModal').modal('show');
     }
 
     function saveCustomerChanges() {
         if (selectedCustomer) {
-            selectedCustomer.name = $('#customerName').val();
-            selectedCustomer.phone = $('#customerPhone').val();
-            selectedCustomer.address = $('#customerAddress').val();
-            renderCustomers(customers);
+            selectedCustomer.name = document.getElementById('customerName').value;
+            selectedCustomer.phone = document.getElementById('customerPhone').value;
+            selectedCustomer.address = document.getElementById('customerAddress').value;
+            renderCustomers(customers); // Re-render with the updated data
             $('#editCustomerModal').modal('hide');
         }
     }
@@ -69,15 +57,16 @@
     function addNewCustomer() {
         const newCustomer = {
             id: Date.now(),
-            name: $('#newCustomerName').val(),
-            phone: $('#newCustomerPhone').val(),
-            address: $('#newCustomerAddress').val()
+            name: document.getElementById('newCustomerName').value,
+            phone: document.getElementById('newCustomerPhone').value,
+            address: document.getElementById('newCustomerAddress').value
         };
-        customers.push(newCustomer);
-        renderCustomers(customers);
+        customers.push(newCustomer); // Add to the global customers array
+        renderCustomers(customers); // Re-render with the new customer
         $('#addCustomerModal').modal('hide');
     }
 
+    // Event listeners
     document.getElementById('addCustomerBtn').addEventListener('click', openAddCustomerModal);
     document.getElementById('saveCustomerBtn').addEventListener('click', saveCustomerChanges);
     document.getElementById('deleteCustomerBtn').addEventListener('click', deleteCustomer);
@@ -89,6 +78,11 @@
         renderCustomers(filteredCustomers);
     });
 
-    loadCustomers();
+    // Use the customers loaded globally from the main script
+    if (customers) {
+        renderCustomers(customers);
+    } else {
+        console.error('Customers not loaded yet');
+    }
 })();
 
