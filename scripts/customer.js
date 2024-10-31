@@ -1,41 +1,40 @@
-
-(function () {
+$(document).ready(function() {
     let selectedCustomer = null;
 
     function renderCustomers(customersToRender) {
-        const tableBody = document.getElementById('customerTableBody');
-        tableBody.innerHTML = '';
+        const tableBody = $('#customerTableBody');
+        tableBody.empty();
 
         customersToRender.forEach(customer => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
+            const row = $('<tr>');
+            row.html(`
                 <td>${customer.id}</td>
                 <td>${customer.name}</td>
                 <td>${customer.phone}</td>
                 <td>${customer.address}</td>
-            `;
+            `);
 
-            row.addEventListener('click', () => {
+            row.on('click', function() {
                 openEditCustomerModal(customer);
             });
 
-            tableBody.appendChild(row);
+            tableBody.append(row);
         });
     }
 
     function openEditCustomerModal(customer) {
         selectedCustomer = customer;
-        document.getElementById('customerName').value = customer.name;
-        document.getElementById('customerPhone').value = customer.phone;
-        document.getElementById('customerAddress').value = customer.address;
+        $('#customerName').val(customer.name);
+        $('#customerPhone').val(customer.phone);
+        $('#customerAddress').val(customer.address);
         $('#editCustomerModal').modal('show');
     }
 
     function saveCustomerChanges() {
         if (selectedCustomer) {
-            selectedCustomer.name = document.getElementById('customerName').value;
-            selectedCustomer.phone = document.getElementById('customerPhone').value;
-            selectedCustomer.address = document.getElementById('customerAddress').value;
+            selectedCustomer.name = $('#customerName').val();
+            selectedCustomer.phone = $('#customerPhone').val();
+            selectedCustomer.address = $('#customerAddress').val();
             renderCustomers(customers); // Re-render with the updated data
             $('#editCustomerModal').modal('hide');
         }
@@ -57,9 +56,9 @@
     function addNewCustomer() {
         const newCustomer = {
             id: Date.now(),
-            name: document.getElementById('newCustomerName').value,
-            phone: document.getElementById('newCustomerPhone').value,
-            address: document.getElementById('newCustomerAddress').value
+            name: $('#newCustomerName').val(),
+            phone: $('#newCustomerPhone').val(),
+            address: $('#newCustomerAddress').val()
         };
         customers.push(newCustomer); // Add to the global customers array
         renderCustomers(customers); // Re-render with the new customer
@@ -67,12 +66,12 @@
     }
 
     // Event listeners
-    document.getElementById('addCustomerBtn').addEventListener('click', openAddCustomerModal);
-    document.getElementById('saveCustomerBtn').addEventListener('click', saveCustomerChanges);
-    document.getElementById('deleteCustomerBtn').addEventListener('click', deleteCustomer);
-    document.getElementById('addNewCustomerBtn').addEventListener('click', addNewCustomer);
+    $('#addCustomerBtn').on('click', openAddCustomerModal);
+    $('#saveCustomerBtn').on('click', saveCustomerChanges);
+    $('#deleteCustomerBtn').on('click', deleteCustomer);
+    $('#addNewCustomerBtn').on('click', addNewCustomer);
 
-    document.getElementById('customerSearchBar').addEventListener('input', (e) => {
+    $('#customerSearchBar').on('input', function(e) {
         const searchValue = e.target.value.toLowerCase();
         const filteredCustomers = customers.filter(customer => customer.name.toLowerCase().includes(searchValue));
         renderCustomers(filteredCustomers);
@@ -84,5 +83,4 @@
     } else {
         console.error('Customers not loaded yet');
     }
-})();
-
+});

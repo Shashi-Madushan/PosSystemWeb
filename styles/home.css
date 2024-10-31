@@ -10,9 +10,8 @@
     justify-content: center;
     align-items: center;
 }
-.container{
+.container-fluid{
     margin: 90px;
-    gap: 10px;
     max-width: 100%;
 }
 

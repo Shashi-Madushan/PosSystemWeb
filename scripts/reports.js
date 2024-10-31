@@ -2,7 +2,7 @@
 (function () {
 
     function generateReport() {
-        
+
         console.log('Orders for report:', orders);
 
         if (orders != null) {
@@ -42,14 +42,14 @@
         const order = orders[orderIndex];
 
         // Populate modal with order details
-        document.getElementById('modalCustomerName').textContent = order.customer.name;
-        document.getElementById('modalCustomerPhone').textContent = order.customer.phone;
-        document.getElementById('modalCustomerAddress').textContent = order.customer.address;
-        document.getElementById('modalOrderId').textContent = order.orderId;
-        document.getElementById('modalOrderDateTime').textContent = formatDateTime(order.date);
-        document.getElementById('modalSubtotal').textContent = order.subtotal;
-        document.getElementById('modalDiscount').textContent = order.discount;
-        document.getElementById('modalTotal').textContent = order.total;
+        $('#modalCustomerName').text(order.customer.name);
+        $('#modalCustomerPhone').text(order.customer.phone);
+        $('#modalCustomerAddress').text(order.customer.address);
+        $('#modalOrderId').text(order.orderId);
+        $('#modalOrderDateTime').text(formatDateTime(order.date));
+        $('#modalSubtotal').text(order.subtotal);
+        $('#modalDiscount').text(order.discount);
+        $('#modalTotal').text(order.total);
 
         // Populate the order items list
         const itemsList = document.getElementById('modalOrderItemsList');
@@ -69,4 +69,3 @@
 
 
 })();
-// Example data - your data will come from your orders array

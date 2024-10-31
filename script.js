@@ -2,16 +2,16 @@ let items = null;
 let customers = null;
 let orders = [];
 document.addEventListener("DOMContentLoaded", function () {
-    $(document).ready(function() {
-        $('.hamburger').on('click', function() {
-            $('.sidebar').toggleClass('show');
-        });
+     $(document).ready(function() {
+            $('.hamburger').on('click', function() {
+                $('.sidebar').toggleClass('show');
+            });
 
-        // Close sidebar when a link is clicked on small screens
-        $('.sidebar a').on('click', function() {
-            $('.sidebar').removeClass('show');
+            // Close sidebar when a link is clicked on small screens
+            $('.sidebar a').on('click', function() {
+                $('.sidebar').removeClass('show');
+            });
         });
-    });
     const links = document.querySelectorAll('nav > a');
     const dynamicContent = document.getElementById('dynamic_content');
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // const tempContainer = document.createElement('div');
                 // tempContainer.innerHTML = responseText;
                 // dynamicContent.appendChild(tempContainer);
-                dynamicContent.innerHTML= responseText;
+                dynamicContent.innerHTML=responseText;
 
                 // Load external scripts
                 const scripts = dynamicContent.querySelectorAll('script[src]');
