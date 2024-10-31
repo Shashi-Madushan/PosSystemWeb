@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     async function loadCustomers() {
         try {
-            const res = await fetch('../jsones/customers.json');
+            const res = await fetch('./jsones/customers.json');
             const data = await res.json();
             customers = data;
             console.log(customers);
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     async function loadItems() {
         try {
-            const res = await fetch('../jsones/items.json');
+            const res = await fetch('./jsones/items.json');
             const data = await res.json();
             items= data;
            console.log(items)
