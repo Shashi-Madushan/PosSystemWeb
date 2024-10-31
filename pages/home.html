@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="../styles/home.css">
 </head>
 <body>
-    <div class="container-fluid mt-4 ">
-        <div class="row justify-content-arround ">
+    <div class="container mt-4 pt-sm-5">
+        <div class="row">
             <!-- Left side (Items/Customer section) -->
             <div class="col-md-8">
-                <div class="d-flex justify-content-between mb-3">
-               
-                    <input type="text" id="searchBar" class="form-control w-90" placeholder="Search...">
+                <div class="mb-3">
+                    <input type="text" id="searchBar" class="form-control" placeholder="Search...">
                 </div>
                 <div class="mb-3">
                     <button id="showItemsBtn" class="btn btn-dark">
@@ -25,28 +24,29 @@
                 </div>
 
                 <!-- Dynamic section for Items/Customers -->
-                <div id="dynamicSection" class="row"></div>
+                <div id="homeDynamicSection" class="homeDynamicSection row"></div>
             </div>
 
-            <div id="paymentSection">
-                <div id="customerDetails">
-                    <p><strong>Order ID:</strong><span id="orderId">random id</span> </p>
-                    <p><strong>Customer Name:</strong> <span id="selectedCustomer">John Doe</span></p>
-                    <p><strong>Phone:</strong> <span id="selectedCustomerPhone">555-1234</span></p>
-                </div>
-            
-                <ul id="orderItemsList" class="list-group">
-                    <!-- Dynamically added items will appear here -->
-                </ul>
-            
-                <div id="totalsSection">
-                    <p><strong>Subtotal:</strong> <span id="subtotal">Rs 0.00</span></p>
-                    <p><label for="discount">Discount:</label> <input type="number" id="discount" class="form-control d-inline-block w-25" value="0" >%</p>
-                    <p><strong>Total:</strong> <span id="total">Rs 0.00</span></p>
-                    <button class="btn btn-success w-100" id="payButton">Pay Now</button>
+            <div class="col-md-4">
+                <div id="paymentSection">
+                    <div id="customerDetails">
+                        <p><strong>Order ID:</strong><span id="orderId">random id</span> </p>
+                        <p><strong>Customer Name:</strong> <span id="selectedCustomer">John Doe</span></p>
+                        <p><strong>Phone:</strong> <span id="selectedCustomerPhone">555-1234</span></p>
+                    </div>
+                
+                    <ul id="orderItemsList" class="list-group">
+                        <!-- Dynamically added items will appear here -->
+                    </ul>
+                
+                    <div id="totalsSection">
+                        <p><strong>Subtotal:</strong> <span id="subtotal">Rs 0.00</span></p>
+                        <p><label for="discount">Discount:</label> <input type="number" id="discount" class="form-control" value="0">%</p>
+                        <p><strong>Total:</strong> <span id="total">Rs 0.00</span></p>
+                        <button class="btn btn-success w-100" id="payButton">Pay Now</button>
+                    </div>
                 </div>
             </div>
-            
         </div>
     </div>
 

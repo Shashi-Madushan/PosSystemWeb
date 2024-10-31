@@ -52,16 +52,15 @@ tr:hover{
     padding: 10px 0;
     font-weight: bold;
 }
-#dynamicSection {
+#homeDynamicSection {
     height: calc(90vh - 100px); /* Adjust this based on other elements' heights */
     max-height: calc(90vh - 100px); /* Maximum height to avoid exceeding viewport */
     overflow-y: auto; /* Enable vertical scrolling */
-    padding: 15px;
     margin-bottom: 20px;
     border: none
     
 }
 
-#dynamicSection .card {
+#homeDynamicSection .card {
     margin-bottom: 15px; /* Spacing between cards */
 }

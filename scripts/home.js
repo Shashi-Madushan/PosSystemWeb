@@ -7,7 +7,7 @@
 
     // Render dynamic section (Items or Customers)
     function renderDynamicSection(data, type) {
-        const section = document.getElementById('dynamicSection');
+        const section = document.getElementById('homeDynamicSection');
         section.innerHTML = '';
 
         activeSection = type; // Set active section
@@ -15,7 +15,7 @@
         if (type === 'items') {
             data.forEach(item => {
                 const div = document.createElement('div');
-                div.className = 'col-4 p-2';
+                div.className = '"col-lg-3 col-md-4 col-sm-6 col-12 mb-4"';
                 div.innerHTML = `
                     <div class="card h-100 ">
                         <div class=" p-2  text-center align-content-around">
