@@ -55,7 +55,7 @@ body {
     border-radius: 5px;
 }
 #dynamic_content{
-   width: fit-content;
+   width: 100%;
    margin: auto;
 }
 /* Show navigation sidebar by default in desktop and tablet view */
