@@ -2,6 +2,33 @@ let items = null;
 let customers = null;
 let orders = [];
 document.addEventListener("DOMContentLoaded", function () {
+    
+    async function loadCustomers() {
+        try {
+            const res = await fetch('../jsones/customers.json');
+            const data = await res.json();
+            customers = data;
+            console.log(customers);
+
+
+        } catch (error) {
+            console.log('error loading customers (customers)', error);
+        }
+
+    }
+    loadCustomers();
+    
+    async function loadItems() {
+        try {
+            const res = await fetch('../jsones/items.json');
+            const data = await res.json();
+            items= data;
+           console.log(items)
+        } catch (error) {
+            console.log('erron loading items (items)',error);
+        }
+    }
+    loadItems();
      $(document).ready(function() {
             $('.hamburger').on('click', function() {
                 $('.sidebar').toggleClass('show');
@@ -78,31 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const defaultFile = links[0].getAttribute('data-file');
     loadContent(defaultFile);
 
-    async function loadCustomers() {
-        try {
-            const res = await fetch('../jsones/customers.json');
-            const data = await res.json();
-            customers = data;
-            console.log(customers);
-
-
-        } catch (error) {
-            console.log('error loading customers (customers)', error);
-        }
-
-    }
-    loadCustomers();
-    
-    async function loadItems() {
-        try {
-            const res = await fetch('../jsones/items.json');
-            const data = await res.json();
-            items= data;
-           console.log(items)
-        } catch (error) {
-            console.log('erron loading items (items)',error);
-        }
-    }
-    loadItems();
     
 });
